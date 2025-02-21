@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Mehnat rang layi</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Text Effect</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            position: relative;
+            text-align: center;
+            font-size: 2rem;
+        }
+        .word {
+            position: relative;
+            opacity: 0;
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(-30px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="textContainer"></div>
+    <script>
+        const words = ["𝕋𝔼ℝ𝔸", "𝔹𝔸ℍ𝕌𝕋", "𝔹𝔸ℝ𝔸", "ℙ𝕆ℙ𝔸𝕋", "ℍ𝕆", "𝔾𝔸𝕐𝔸", "ℙ𝔸𝔾𝔸𝕃"];
+        const container = document.getElementById("textContainer");
+        let index = 0;function addWord() {
+        if (index < words.length) {
+            let newWord = document.createElement("div");
+            newWord.className = "word";
+            newWord.textContent = words[index];
+            container.appendChild(newWord);
+            setTimeout(() => newWord.classList.add("visible"), 100);
+            index++;
+            setTimeout(addWord, 800);
+        }
+    }
+    
+    addWord();
+</script>
+
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
